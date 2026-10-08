@@ -1,7 +1,5 @@
 # ARGUS — Agentic RTL-to-GDS Using UVM Sign-off
 
-![ARGUS banner](docs/argus_logo.png)
-
 Two independent LLM-driven hardware loops, plus an orchestrator that chains
 them into one RTL-to-GDS run.
 
