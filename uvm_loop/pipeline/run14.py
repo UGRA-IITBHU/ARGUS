@@ -1275,7 +1275,7 @@ def create_improvement_agent(work_dir, retries=1):
     the TB repair operation can tolerate a transient OpenCode timeout.
     """
     # Files are prepared/collected using the host path, but OpenCode and its
-    # Bash tool execute inside CHIA where the project is mounted at /workspace.
+    # Bash tool execute inside ARGUS where the project is mounted at /workspace.
     container_work_dir = _container_workspace_path(work_dir)
 
     bash = BashTool(
@@ -3221,7 +3221,7 @@ def build_contract_prompt(canonical_plan, capabilities, rules, templates_note):
         ["dut", "parameters", "clock_and_reset", "ports", "functional_behavior"],
     )
     return f"""
-You are the CHIA cocotb+pyuvm environment generator, stage 1 of 6: CONTRACT.
+You are the ARGUS cocotb+pyuvm environment generator, stage 1 of 6: CONTRACT.
 
 Work in /workspace.
 
@@ -3281,7 +3281,7 @@ def build_stimulus_prompt(canonical_plan):
         ["directed_test_scenarios", "corner_cases", "randomized_testing_strategy"],
     )
     return f"""
-You are the CHIA cocotb+pyuvm environment generator, stage 2 of 6: STIMULUS.
+You are the ARGUS cocotb+pyuvm environment generator, stage 2 of 6: STIMULUS.
 
 Project files are mounted at /workspace. Use the benchmark-local generated
 root /workspace/{DESIGN_GENERATED_ROOT} for all generated artifacts.
@@ -3340,7 +3340,7 @@ your response — write it to disk.
 def build_observation_prompt(canonical_plan):
     plan_bits = plan_section(canonical_plan, ["functional_behavior"])
     return f"""
-You are the CHIA cocotb+pyuvm environment generator, stage 3 of 6: OBSERVATION.
+You are the ARGUS cocotb+pyuvm environment generator, stage 3 of 6: OBSERVATION.
 
 Work in /workspace.
 
@@ -3377,7 +3377,7 @@ def build_scoreboard_prompt(canonical_plan):
         canonical_plan, ["scoreboard_reference_model_strategy", "functional_behavior"]
     )
     return f"""
-You are the CHIA cocotb+pyuvm environment generator, stage 4 of 6: SCOREBOARD.
+You are the ARGUS cocotb+pyuvm environment generator, stage 4 of 6: SCOREBOARD.
 
 Work in /workspace.
 
@@ -3424,7 +3424,7 @@ your response — write it to disk.
 def build_coverage_assertions_prompt(canonical_plan):
     plan_bits = plan_section(canonical_plan, ["functional_coverage", "useful_assertions"])
     return f"""
-You are the CHIA cocotb+pyuvm environment generator, stage 5 of 6: COVERAGE & ASSERTIONS.
+You are the ARGUS cocotb+pyuvm environment generator, stage 5 of 6: COVERAGE & ASSERTIONS.
 
 Work in /workspace.
 
@@ -3464,7 +3464,7 @@ your response — write it to disk.
 # =========================================================
 def build_integration_prompt(canonical_plan, capabilities, rules, templates_note):
     return f"""
-You are the CHIA cocotb+pyuvm environment generator, stage 6 of 6: INTEGRATION.
+You are the ARGUS cocotb+pyuvm environment generator, stage 6 of 6: INTEGRATION.
 
 Work in /workspace.
 
@@ -6672,7 +6672,7 @@ def run_rtl_verification_loop():
     print("✓ Original benchmark RTL was not modified.")
 
 
-# Main CHIA orchestration
+# Main ARGUS orchestration
 
 # =========================================================
 
@@ -6680,7 +6680,7 @@ def main():
     import argparse
 
     parser = argparse.ArgumentParser(
-        description="CHIA multi-RTL Cocotb + pyUVM verification pipeline"
+        description="ARGUS multi-RTL Cocotb + pyUVM verification pipeline"
     )
     parser.add_argument(
         "--design-config",
@@ -6692,7 +6692,7 @@ def main():
     configure_design(args.design_config)
 
     print("\n=========================================================")
-    print(f" CHIA verification run: {DESIGN_NAME}")
+    print(f" ARGUS verification run: {DESIGN_NAME}")
     print("=========================================================")
     print(f"  RTL:          {RTL}")
     print(f"  Specification:{SPEC}")

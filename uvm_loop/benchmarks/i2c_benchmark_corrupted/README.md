@@ -1,4 +1,4 @@
-# I2C Master CHIA Benchmark
+# I2C Master ARGUS Benchmark
 
 Self-contained I2C master benchmark for LLM-driven Cocotb + PyUVM RTL
 verification.
@@ -33,7 +33,7 @@ The Python model checks address-byte construction and transaction-level
 expectations. Cocotb/PyUVM should provide the actual bus driving/monitoring
 and compare the DUT behavior against these protocol expectations.
 
-## CHIA usage
+## ARGUS usage
 
 Use `i2c_spec.md` as the hardware specification and
 `i2c_reference_model.py` as the independent reference model for generating

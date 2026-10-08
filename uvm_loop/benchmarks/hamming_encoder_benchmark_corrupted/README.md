@@ -1,6 +1,6 @@
 # Hamming Encoder Benchmark
 
-Extended Hamming(72,64) SECDED encoder for CHIA/LLM-driven RTL verification.
+Extended Hamming(72,64) SECDED encoder for ARGUS/LLM-driven RTL verification.
 
 Files:
 

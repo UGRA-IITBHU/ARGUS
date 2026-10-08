@@ -1,6 +1,6 @@
 # I2C Benchmark
 
-Self-contained benchmark for the CocoTb + Python UVM / CHIA verification
+Self-contained benchmark for the CocoTb + Python UVM / ARGUS verification
 pipeline.
 
 ## Contents

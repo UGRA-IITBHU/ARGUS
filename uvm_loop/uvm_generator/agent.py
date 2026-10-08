@@ -3,10 +3,10 @@ LLM-assisted UVM generation planner.
 
 This module does NOT create its own LLM client or Ray/OpenCode connection.
 
-CHIA orchestration owns the OpenCodeLLM instance and passes an LLM callable
-into generate_generation_spec(). This keeps LLM execution inside CHIA's
-existing OpenCode worker while keeping generation deterministic after the
-GenerationSpec has been produced.
+The ARGUS orchestration layer owns the OpenCodeLLM instance and passes an LLM
+callable into generate_generation_spec(). This keeps LLM execution inside the
+framework's existing OpenCode worker while keeping generation deterministic
+after the GenerationSpec has been produced.
 """
 
 from __future__ import annotations
@@ -35,7 +35,7 @@ RULES = yaml.safe_load(
 
 
 SYSTEM = """
-You are the CHIA UVM environment generation planner.
+You are the ARGUS UVM environment generation planner.
 
 Return ONLY one JSON object matching the supplied GenerationSpec schema.
 
@@ -196,16 +196,16 @@ def generate_generation_spec(
     llm: Callable[[str, str], str],
 ) -> GenerationSpec:
     """
-    Generate and validate a GenerationSpec using the CHIA-provided LLM.
+    Generate and validate a GenerationSpec using the provided LLM.
 
-    The LLM callable is supplied by the CHIA orchestration layer. This module
+    The LLM callable is supplied by the ARGUS orchestration layer. This module
     does not own OpenCode, Ray, credentials, model selection, or worker
     placement.
     """
 
     if llm is None:
         raise ValueError(
-            "An LLM callable must be supplied by the CHIA orchestration layer."
+            "An LLM callable must be supplied by the ARGUS orchestration layer."
         )
 
     raw = llm(

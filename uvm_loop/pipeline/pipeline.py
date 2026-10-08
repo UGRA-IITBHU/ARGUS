@@ -1,4 +1,4 @@
-"""Compatibility entry point for the current CHIA pipeline.
+"""Compatibility entry point for the current ARGUS pipeline.
 
 The active end-to-end orchestration is implemented in ``pipeline.run4``.
 This module intentionally does not expose the obsolete generate_plan/

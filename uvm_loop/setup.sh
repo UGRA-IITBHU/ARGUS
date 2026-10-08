@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # ------------------------------------------------------------
-# CHIA project setup
+# ARGUS project setup
 # ------------------------------------------------------------
 
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -11,7 +11,7 @@ export CHIA_PROJECT_ROOT="$PROJECT_ROOT"
 export THIS_MACHINE="$(hostname -I | awk '{print $1}')"
 
 echo "========================================"
-echo "CHIA LLM-UVM-TB Generator Setup"
+echo "ARGUS LLM-UVM-TB Generator Setup"
 echo "========================================"
 echo
 echo "Project root : $CHIA_PROJECT_ROOT"
@@ -24,7 +24,7 @@ echo
 
 if ! command -v chia >/dev/null 2>&1; then
     echo "ERROR: 'chia' command not found."
-    echo "Activate your CHIA environment first."
+    echo "Activate your chia_env conda environment first."
     exit 1
 fi
 
@@ -156,7 +156,7 @@ if ! docker image inspect chia-sim-worker:chia-local >/dev/null 2>&1; then
 fi
 
 # ------------------------------------------------------------
-# Export variables for CHIA
+# Export variables for the ARGUS cluster
 # ------------------------------------------------------------
 
 export CHIA_PROJECT_ROOT
@@ -168,10 +168,10 @@ echo "Environment configured."
 echo
 
 # ------------------------------------------------------------
-# Start CHIA cluster
+# Start the ARGUS cluster
 # ------------------------------------------------------------
 
-echo "Starting CHIA cluster..."
+echo "Starting ARGUS cluster..."
 echo
 
 chia up "$PROJECT_ROOT/cluster.yaml"

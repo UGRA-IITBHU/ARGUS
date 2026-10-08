@@ -67,7 +67,7 @@ def block_to_digest(block: bytes) -> bytes:
     return sha256_digest(message)
 
 
-# Known-answer tests useful for CHIA-generated verification.
+# Known-answer tests useful for ARGUS-generated verification.
 TEST_VECTORS = [
     {
         "name": "empty",

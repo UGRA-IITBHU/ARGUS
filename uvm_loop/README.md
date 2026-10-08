@@ -1,5 +1,8 @@
 # uvm_loop — Cocotb + pyUVM verification pipeline
 
+Part of [ARGUS](../README.md) — Agentic RTL-to-GDS Using UVM Sign-off. This is
+the UVM verification stage.
+
 Give it RTL, a specification, and a Python reference model. It generates a
 verification plan, builds a Cocotb + pyUVM testbench, runs it against the RTL
 under Verilator, checks results against the reference model, and iterates —

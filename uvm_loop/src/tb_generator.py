@@ -30,7 +30,7 @@ class TBGenerator:
         a pre-generated GenerationSpec.
 
         LLM/OpenCode execution is intentionally outside this class.
-        CHIA/run2.py produces GenerationSpec; this worker only validates
+        run2.py produces GenerationSpec; this worker only validates
         the structured artifact and renders the UVM environment.
         """
 
@@ -92,7 +92,7 @@ def load_plan(path: str) -> VerificationPlan:
 
 
 def main() -> None:
-    """CLI entry point used inside the CHIA RTL/UVM worker."""
+    """CLI entry point used inside the ARGUS RTL/UVM worker."""
 
     parser = argparse.ArgumentParser(
         description=(

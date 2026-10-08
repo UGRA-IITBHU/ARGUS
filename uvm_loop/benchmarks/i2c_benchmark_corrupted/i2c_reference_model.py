@@ -1,5 +1,5 @@
 """
-Independent Python reference model for the CHIA I2C master benchmark.
+Independent Python reference model for the ARGUS I2C master benchmark.
 
 The DUT exposes a compact digital I2C master transaction interface.
 This reference model describes the expected transaction-level behavior:
@@ -87,7 +87,7 @@ def expected_read_address(slave_addr: int) -> int:
     return make_address_byte(slave_addr, True)
 
 
-# Useful protocol-level tests for CHIA-generated verification.
+# Useful protocol-level tests for ARGUS-generated verification.
 TEST_VECTORS = [
     {
         "name": "write_basic",

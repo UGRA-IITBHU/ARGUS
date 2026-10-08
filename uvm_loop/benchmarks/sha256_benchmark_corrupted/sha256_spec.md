@@ -219,7 +219,7 @@ It does NOT:
 These exclusions keep the benchmark focused on the cryptographic
 compression datapath.
 
-## 10. Suggested CHIA Verification Focus
+## 10. Suggested ARGUS Verification Focus
 
 The verification pipeline should be capable of detecting errors in:
 

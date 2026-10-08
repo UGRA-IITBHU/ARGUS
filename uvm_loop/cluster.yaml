@@ -35,7 +35,7 @@ available_node_types:
                 - --shm-size=4gb
                 - -v ${CHIA_PROJECT_ROOT}:/workspace
                 - -v ${HOME}/snap/code/259/.local/share/opencode/auth.json:/home/ray/.local/share/opencode/auth.json:ro
-                # Pass the selected LLM and Gemini API key into the CHIA worker.
+                # Pass the selected LLM and Gemini API key into the ARGUS worker.
                 # The API key is read from the host environment; it is not stored in git.
                 - -e LLM_MODEL=${LLM_MODEL}
                 - -e GOOGLE_GENERATIVE_AI_API_KEY=${GOOGLE_GENERATIVE_AI_API_KEY}

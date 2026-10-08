@@ -1,5 +1,8 @@
 # rtl_to_gds — UVM verification → ORFS closure
 
+Part of [ARGUS](../README.md) — Agentic RTL-to-GDS Using UVM Sign-off. This is
+the orchestrator that chains the two loops into one run.
+
 `rtl_to_gds.py` chains the two loops into one run:
 
 1. **UVM stage.** Runs `uvm_loop`'s `pipeline.run14` on a design YAML. The loop builds a testbench and repairs the RTL until it is verified.

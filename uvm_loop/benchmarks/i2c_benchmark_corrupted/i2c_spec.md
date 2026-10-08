@@ -252,7 +252,7 @@ address_byte == (slave_addr << 1) | rw
 - `done` must be a pulse rather than a permanent level.
 - Reset must return the controller to a known idle state.
 
-## 12. Suggested CHIA Fault Classes
+## 12. Suggested ARGUS Fault Classes
 
 This benchmark provides useful repair targets including:
 

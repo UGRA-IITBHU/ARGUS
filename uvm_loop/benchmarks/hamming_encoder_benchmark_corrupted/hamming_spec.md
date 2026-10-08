@@ -185,7 +185,7 @@ For every generated codeword:
 - P64 check must be even
 - overall parity must be even
 
-## 9. Suggested CHIA Fault Injection Targets
+## 9. Suggested ARGUS Fault Injection Targets
 
 This benchmark has many clean semantic fault targets:
 

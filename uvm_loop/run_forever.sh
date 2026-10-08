@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Generic supervisor for the CHIA verification-improvement loop.
+# Generic supervisor for the ARGUS verification-improvement loop.
 #
 # Usage:
 #   ./run_forever.sh <design-config> [max-iterations]
@@ -57,7 +57,7 @@ log() {
 }
 
 log "=============================================================================="
-log "CHIA verification-improvement supervisor"
+log "ARGUS verification-improvement supervisor"
 log "Project       : $PROJECT_ROOT"
 log "Design config : $DESIGN_CONFIG"
 log "Design        : $DESIGN_NAME"

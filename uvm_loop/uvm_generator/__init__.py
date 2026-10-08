@@ -1,1 +1,1 @@
-"""Capability-driven UVM environment generation for CHIA."""
+"""Capability-driven UVM environment generation for ARGUS."""
