@@ -1,4 +1,4 @@
-# SHA-256 CHIA Benchmark
+# SHA-256 ARGUS Benchmark
 
 Self-contained single-block SHA-256 RTL benchmark for LLM-driven RTL verification.
 

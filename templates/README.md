@@ -26,7 +26,7 @@ a real key.
   Add more provider slots later, one per extra API key, so a rate limit on
   one key doesn't stall the whole pipeline.
 
-**Don't hand-edit `opencode.jsonc` beyond a first test.** Once the CHIA
+**Don't hand-edit `opencode.jsonc` beyond a first test.** Once the ARGUS
 cluster is up, use `uvm_loop/scripts/add_llm_provider.sh` instead — it
 writes the same file, but also copies it into every running opencode
 worker container (this path is not bind-mounted from the host, so a

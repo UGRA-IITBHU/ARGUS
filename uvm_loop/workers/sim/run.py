@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run a generated CHIA Cocotb + pyUVM environment with Verilator.
+"""Run a generated ARGUS Cocotb + pyUVM environment with Verilator.
 
 The worker deliberately keeps execution deterministic:
   * generated_tb/generation_manifest.yaml is the source of TB file order;
@@ -95,7 +95,7 @@ def validate_manifest(
 ) -> tuple[str, Path, list[Path], list[str]]:
     """Validate the generated manifest.
 
-    RTL paths are resolved relative to the CHIA workspace, not generated_tb.
+    RTL paths are resolved relative to the ARGUS workspace, not generated_tb.
     This is important because the manifest normally contains paths such as:
 
         examples/adder/adder.sv

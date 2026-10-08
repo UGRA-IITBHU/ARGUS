@@ -1,6 +1,6 @@
 # FIFO Benchmark
 
-Second benchmark for the generalized CHIA Cocotb + pyUVM verification flow.
+Second benchmark for the generalized ARGUS Cocotb + pyUVM verification flow.
 
 Files:
 - `benchmarks/fifo/fifo.sv` — synchronous FIFO RTL

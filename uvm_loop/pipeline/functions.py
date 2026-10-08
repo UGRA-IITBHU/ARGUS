@@ -1,6 +1,6 @@
-"""CHIA functions for the verification-generation pipeline.
+"""ARGUS functions for the verification-generation pipeline.
 
-CHIA remains the orchestration layer. Tool implementations are kept in the
+ARGUS remains the orchestration layer. Tool implementations are kept in the
 containerized workers under ``workers/``.
 """
 
@@ -16,14 +16,14 @@ def extract_rtl(
     rtl_path: str,
     output_path: str = "generated/rtl/rtl_info.json",
 ) -> str:
-    """Run RTL extraction inside the CHIA RTL worker."""
+    """Run RTL extraction inside the ARGUS RTL worker."""
 
     workspace = Path("/workspace")
 
     rtl = Path(rtl_path)
     output = Path(output_path)
 
-    # Relative paths are resolved against the shared CHIA workspace.
+    # Relative paths are resolved against the shared ARGUS workspace.
     if not rtl.is_absolute():
         rtl = workspace / rtl
 
@@ -62,7 +62,7 @@ def generate_uvm_in_worker(
     ref_model_path: str,
     out_dir: str = "generated_tb",
 ) -> str:
-    """Run deterministic UVM generation inside the CHIA RTL worker."""
+    """Run deterministic UVM generation inside the ARGUS RTL worker."""
 
     workspace = Path("/workspace")
 

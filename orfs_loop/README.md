@@ -1,4 +1,6 @@
-# chia-orfs
+# orfs_loop — ARGUS physical-design stage
+
+Part of [ARGUS](../README.md) — Agentic RTL-to-GDS Using UVM Sign-off.
 
 An LLM-driven RTL-to-GDS closure loop for [OpenROAD-flow-scripts](https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts)
 (ORFS), built on the [chia](https://github.com/ucb-bar/chia) agent framework. An

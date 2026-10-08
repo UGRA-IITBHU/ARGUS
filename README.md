@@ -1,4 +1,4 @@
-# CHIA-Based UVM Verification and Physical Design
+# ARGUS — Agentic RTL-to-GDS Using UVM Sign-off
 
 Two independent LLM-driven hardware loops, plus an orchestrator that chains
 them into one RTL-to-GDS run.
@@ -31,8 +31,8 @@ and run commands from inside it.
 ### 1. Clone and bootstrap
 
 ```bash
-git clone https://github.com/noahwithoutark22/chia-hackathon.git
-cd chia-hackathon
+git clone https://github.com/UGRA-IITBHU/argus.git
+cd argus
 ./startup.sh
 ```
 
@@ -150,7 +150,7 @@ into the testbench. Failures drive RTL repair, then re-verification.
   Specification + Reference Model
               │
               ▼
-         CHIA + LLM  ──►  Cocotb + pyUVM testbench  ◄───────┐
+         ARGUS + LLM  ──►  Cocotb + pyUVM testbench  ◄───────┐
                                     │                       │
                                     ▼                       │
                                Verify RTL                   │
@@ -180,7 +180,7 @@ tools and only replies with a JSON tunable diff or `CLOSURE: PASS` /
   RTL ──► ORFS flow ──► PPA / timing / DRC
                                │
                                ▼
-                          CHIA + LLM
+                          ARGUS + LLM
                                │
                                ▼
                   constrained tunable changes

@@ -36,7 +36,7 @@ def find_forbidden_patterns(tb_dir: str | Path) -> list[dict[str, str]]:
                 "file": path.name,
                 "message": (
                     "uvm_config_db is specialized with a parameterized virtual-interface "
-                    "type; this is not supported by the CHIA Verilator 5.042 flow."
+                    "type; this is not supported by the ARGUS Verilator 5.042 flow."
                 ),
             })
     return findings
@@ -49,6 +49,6 @@ def assert_verilator_compatible(tb_dir: str | Path) -> None:
             f"- {x['file']}: {x['code']}: {x['message']}" for x in findings
         )
         raise ValueError(
-            "Generated TB violates the CHIA Verilator compatibility contract:\n"
+            "Generated TB violates the ARGUS Verilator compatibility contract:\n"
             + details
         )

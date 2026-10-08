@@ -1,5 +1,5 @@
 """
-Independent Python reference model for the CHIA AES-128 benchmark.
+Independent Python reference model for the ARGUS AES-128 benchmark.
 
 The DUT performs standard AES-128 encryption on one 128-bit block.
 This model uses Python's cryptography-independent pure reference

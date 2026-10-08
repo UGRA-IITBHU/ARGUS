@@ -24,8 +24,8 @@ import shutil
 from pathlib import Path
 from typing import Any
 
-MANAGED_BEGIN = "# --- CHIA-managed tunables (auto-generated, do not hand-edit below) ---"
-MANAGED_END = "# --- end CHIA-managed tunables ---"
+MANAGED_BEGIN = "# --- ARGUS-managed tunables (auto-generated, do not hand-edit below) ---"
+MANAGED_END = "# --- end ARGUS-managed tunables ---"
 
 # Values must be safe to embed in a Makefile assignment: no $, `, ;, |, &,
 # newlines, or quotes. This is deliberately conservative -- reject anything

@@ -226,7 +226,7 @@ Not included:
 - Key expansion interface
 - DMA or AXI interfaces
 
-## 10. Suggested CHIA Verification Challenges
+## 10. Suggested ARGUS Verification Challenges
 
 This benchmark provides multiple opportunities for RTL verification and
 repair, including:

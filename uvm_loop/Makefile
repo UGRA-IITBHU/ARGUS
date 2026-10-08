@@ -27,7 +27,7 @@ clean:
 	rm -rf generated/designs
 	mkdir -p generated/designs
 
-# Build the Ray/CHIA-based simulation worker image.
+# Build the Ray-based simulation worker image.
 build-sim-image:
 	docker build -f workers/sim/chia.Dockerfile -t chia-sim-worker:chia-local .
 

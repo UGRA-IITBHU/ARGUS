@@ -27,7 +27,7 @@ RUN git clone --depth 1 --branch v${VERILATOR_VERSION} \
 
 ENV PATH="/usr/local/bin:${PATH}"
 
-# Install the simulation worker implementation into the CHIA worker image.
+# Install the simulation worker implementation into the ARGUS worker image.
 # This file must be rebuilt into the image whenever workers/sim/run.py changes.
 COPY workers/sim/run.py /workspace/workers/sim/run.py
 

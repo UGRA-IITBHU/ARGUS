@@ -1,6 +1,6 @@
-# AES-128 CHIA Benchmark
+# AES-128 ARGUS Benchmark
 
-Self-contained AES-128 single-block encryption benchmark for the CHIA
+Self-contained AES-128 single-block encryption benchmark for the ARGUS
 LLM-driven Cocotb + PyUVM RTL verification pipeline.
 
 ## Files
@@ -36,9 +36,9 @@ incrementing    0a940bb5416ef045f1c39458c653ea5a
 All AES-128 reference-model tests passed.
 ```
 
-## CHIA usage
+## ARGUS usage
 
-The specification and reference model can be supplied to CHIA to generate
+The specification and reference model can be supplied to ARGUS to generate
 the Cocotb + PyUVM verification environment. The RTL can then be verified
 against the Python golden model.
 

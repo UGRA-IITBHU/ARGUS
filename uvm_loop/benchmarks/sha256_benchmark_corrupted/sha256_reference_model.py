@@ -1,4 +1,4 @@
-"""Reference model for the CHIA SHA-256 single-block benchmark.
+"""Reference model for the ARGUS SHA-256 single-block benchmark.
 
 The DUT accepts one already-padded 512-bit SHA-256 message block.
 This reference model uses Python's hashlib as an independent golden model.
@@ -61,7 +61,7 @@ def block_to_digest(block: bytes) -> bytes:
     return sha256_digest(message)
 
 
-# Known-answer tests useful for CHIA-generated verification.
+# Known-answer tests useful for ARGUS-generated verification.
 TEST_VECTORS = [
     {
         "name": "empty",

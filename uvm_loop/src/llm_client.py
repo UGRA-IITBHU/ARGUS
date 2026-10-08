@@ -1,5 +1,6 @@
 """
-Reusable CHIA/OpenCode LLM client with configurable providers.
+Reusable OpenCode LLM client with configurable providers, driven by the ARGUS
+orchestration layer.
 
 The default is Google Gemini through OpenCode. The OpenCode model ID
 remains configurable through LLM_MODEL so existing OpenCode/OpenRouter
@@ -134,7 +135,7 @@ def _extract_json(text: str) -> str:
 
 class LLMClient:
     """
-    Thin reusable interface over CHIA's OpenCodeLLM. The selected model
+    Thin reusable interface over the framework's OpenCodeLLM. The selected model
     may be Google Gemini, OpenRouter, OpenCode, or another provider supported
     by the installed OpenCode version.
 
@@ -180,9 +181,9 @@ class LLMClient:
         tools: Sequence[Any] | None = None,
     ) -> str:
         """
-        Execute an OpenCode request through CHIA and return its text.
+        Execute an OpenCode request and return its text.
 
-        Raises RuntimeError with the CHIA/OpenCode response details when
+        Raises RuntimeError with the OpenCode response details when
         the remote request fails instead of hiding the actual failure.
         """
 
