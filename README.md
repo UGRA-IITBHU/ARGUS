@@ -1,5 +1,7 @@
 # ARGUS — Agentic RTL-to-GDS Using UVM Sign-off
 
+![ARGUS banner](docs/argus_logo.png)
+
 Two independent LLM-driven hardware loops, plus an orchestrator that chains
 them into one RTL-to-GDS run.
 
@@ -115,27 +117,34 @@ cluster.
 
 ### Where output lands
 
-A combined run gathers everything into **one folder per run** — both stages'
-logs plus the exact ORFS config it closed with:
+A combined run gathers everything into **one folder per run**, grouped by the
+stage that produced it:
 
 ```text
 runs/<design>/<timestamp>/
-├── uvm/            # verification state, results, checkpoints
-├── orfs/           # flow logs, signoff logs, reports, summary.json
-├── orfs_config/    # config.mk, constraint.sdc, rtl_handoff.json, the RTL
+├── final.gds       # the deliverable (hardlink of orfs/final.gds)
+├── uvm/            # verification state, results, checkpoints, accepted RTL
+├── orfs/           # the ORFS run dir, moved in: gds/, reports/, flow_logs/,
+│                   # signoff_logs/, summaries/, ledger.json, tool_trace.log
+├── orfs_design/    # config.mk, constraint.sdc, src/, verified_rtl/,
+│                   # rtl_handoff.json — the config it closed with
+├── inputs/         # design.yaml, the RTL, spec and reference model
 ├── console.log     # full output of both stages
 ├── manifest.json   # what was collected, from where, and the final GDS path
 └── rtl_to_gds.json # run record, linking the GDS to the verified RTL by md5
 ```
 
-Change the parent with `--runs-dir`. Everything here is regenerated per run
-and is gitignored.
+Nothing is filtered by extension — the GDS, the CDL/LEF/DEF, ORFS's rendered
+webps and the per-iteration GDS all land here. Change the parent with
+`--runs-dir`, or the whole folder with `--logs-dir`. Everything here is
+regenerated per run and is gitignored.
 
-The originals stay where each loop wrote them —
-`uvm_loop/generated/designs/<design>/` and `orfs_loop/orfs_runs/<id>/` (the
-latter root-owned inside the container; remove with
-`docker exec chia-orfs-$USER-0 rm -rf ...`). The GDS itself is not copied into
-the run folder; `manifest.json` records its path.
+The UVM design dir and the ORFS design dir are **copied**, not moved: both are
+live working state (`improvement_state.json` is the UVM resume point, and ORFS
+reads its config from `orfs_design/`'s original on every run). The ORFS *run*
+dir **is** moved — it is staged under `orfs_loop/orfs_runs/` during the run
+because the workers can only write inside the repo they mount, and moved into
+`orfs/` afterwards.
 
 ## How the loops work
 
@@ -205,5 +214,7 @@ integrates them in one direction today: verified RTL flows from `uvm_loop`
 into `orfs_loop`, gated on the verification verdict. Feeding physical
 implementation feedback back into verification is not implemented.
 
-`orfs_loop/` is a sanitised mirror of a separate private working repo — its
-code, prompts, schemas and sample run should stay byte-identical to it.
+`orfs_loop/` is self-contained: the ORFS checkout it drives lives in-tree as
+the `orfs-native-build` submodule (pinned, patched, with `tools/install/`
+populated from the `chia-orfs-run:local` image). No checkout outside this repo
+is needed to run anything here.
