@@ -1,3 +1,4 @@
+![ARGUS Banner](docs/argus_logo.png)
 # ARGUS — Agentic RTL-to-GDS Using UVM Sign-off
 
 Two independent LLM-driven hardware loops, plus an orchestrator that chains
@@ -157,7 +158,7 @@ into the testbench. Failures drive RTL repair, then re-verification.
   Specification + Reference Model
               │
               ▼
-         ARGUS + LLM  ──►  Cocotb + pyUVM testbench  ◄───────┐
+         CHIA + LLM  ──►  Cocotb + pyUVM testbench  ◄───────┐
                                     │                       │
                                     ▼                       │
                                Verify RTL                   │
@@ -187,7 +188,7 @@ tools and only replies with a JSON tunable diff or `CLOSURE: PASS` /
   RTL ──► ORFS flow ──► PPA / timing / DRC
                                │
                                ▼
-                          ARGUS + LLM
+                          CHIA + LLM
                                │
                                ▼
                   constrained tunable changes
